@@ -21,20 +21,30 @@ $local_data_connection = "
     port=$LOCAL_PORT
     ";
 
-    $supa_data_connection = "
+    /*$supa_data_connection = "
         host=$SUPA_HOST
         dbname=$SUPA_DBNAME
         user=$SUPA_USERNAME
         password=$SUPA_PASSWORD
         port=$SUPA_PORT
-    ";
+    ";*/
 //local conncetion
     $local_conn = pg_connect($local_data_connection);
 
     if(!$local_conn){
-        echo "  Error: Unable to connect to database. ";
+        echo "  Error: Unable to connect to local database. ";
         exit();
     }else{
-        echo "Success Connection !!!";
+        echo "Success local Connection !!!";
     }
+//supa conection
+    /*$supa_conn = pg_connect($supa_data_connection);
+
+    if($supa_conn){
+        echo "Error: Unable to connect to supa database";
+        exit();
+    }else{
+        echo "<br>supa succes connection ";
+    }
+    */
 ?>
