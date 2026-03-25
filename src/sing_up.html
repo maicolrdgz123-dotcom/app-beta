@@ -8,19 +8,27 @@
 </head>
 <body bgcolor="FFE073">
     <table border="1">
-        <tr><td><label for="fname">Firstname</label></tr></td>
-        <input type="text"><br>
+        <form name = "frm-user" action = "singup.php" method = "post">
+        <tr><label for="fname">Firstname</label></tr>
+        <input type="text" name = "fname" required><br>
+        
         <label for="lname">Lastname</label><br>
-        <input type="text"><br>
+        <input type="text" lname = "lname" required><br>
+        
         <label for="Email">Email</label><br>
-        <input type="email"><br>
+        <input type="email" email = "email" required><br>
+        
         <label for="">Password</label><br>
-        <input type="password"><br>
+        <input type="password" passwd = "passwd" required><br>
+        
         <label for="passwd">Password again</label><br>
         <input type="password"><br>
+        
         <label for="mphone">Mobile phone</label><br>
-        <input type="text"><br> <br>
+        <input type="text" mphone = "mphone" required><br> <br>
+        
         <button>Register</button><br>
+        </form>
     </table>
 </body>
 </html>
