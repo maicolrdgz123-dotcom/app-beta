@@ -6,7 +6,7 @@
     $e_email = $_POST['email'];
     $m_phone = $_POST['mphone'];
     $p_sswd = $_POST['passwd'];
-    $enc_pass = md5($pswd);
+    $enc_pass = md5($p_sswd);
 
     //query to insert into SQL
     $sql = "INSERT INTO users (firstname, lastname,
