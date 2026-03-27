@@ -12,6 +12,16 @@
     $sql = "INSERT INTO users (firstname, lastname,
     email, mobile_phone, password) VALUES('$f_name','$l_name','$e_email','$m_phone','$enc_pass')";
 
+    //phone 
+    $check_phone = "SELECT mobile_phone FROM users_model WHERE mobile_phone = '$m_phone'";
+    $res_phone = pg_query($local_conn, $check_phone);
+
+    if (pg_num_rows($res_phone) > 0) {
+    echo "Error: El número de celular '$m_phone' ya se encuentra registrado en el sistema."; 
+    exit();
+    }
+
+
     //execute query
     pg_query($sql);
     ?>
