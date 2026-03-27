@@ -23,28 +23,7 @@
     }
     $res_local = pg_query($local_conn, $sql); 
 
-    //phone 
-    $check_phone = "SELECT mobile_phone FROM users_model WHERE mobile_phone = '$m_phone'";
-    $res_phone = pg_query($local_conn, $check_phone);
-
-    if (pg_num_rows($res_phone) > 0) {
-    echo "Error: El número de celular '$m_phone' ya se encuentra registrado en el sistema."; 
-    exit();
-    }
-
-    //local & supa
-    if ($res_local) {
     
-    $res_supa = pg_query($supa_conn, $sql);
-
-    if ($res_supa) {
-        echo "Registro exitoso.";
-    } else {
-        echo "Error: el registro se guardo en local, no en la nube.";
-    }
-    } else {
-    echo "Error: el registro no se guardo en ningun sitio.";
-    }
 
     //execute query
     pg_query($sql);
