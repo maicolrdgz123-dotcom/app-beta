@@ -11,7 +11,7 @@ $SUPA_HOST = 'aws-0-us-west-2.pooler.supabase.com';
 $SUPA_DBNAME ='postgres';
 $SUPA_USERNAME = 'postgres.zwustwrpovllqglqmkzu';
 $SUPA_PASSWORD = 'Perry.1004634903';
-$SUPA_PORT = '5432';
+$SUPA_PORT = '6543';
 
 $local_data_connection = "
     host=$LOCAL_HOST
@@ -22,11 +22,11 @@ $local_data_connection = "
     ";
 
     $supa_data_connection = "
-        host=$SUPA_HOST
-        dbname=$SUPA_DBNAME
-        user=$SUPA_USERNAME
-        password=$SUPA_PASSWORD
-        port=$SUPA_PORT
+        host = $SUPA_HOST
+        dbname = $SUPA_DBNAME
+        user = $SUPA_USERNAME
+        password = $SUPA_PASSWORD
+        port = $SUPA_PORT
     ";
 //local conncetion
     $local_conn = pg_connect($local_data_connection);
