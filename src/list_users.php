@@ -1,3 +1,16 @@
+<?php 
+    require("../config/database.php");
+    $sql_users="
+        SELECT
+            select firstname||' '||lastname as fullname,
+	        email,
+	        mobile_phone,
+	        case when status = true then 'active' else 'inactive' end as status,
+	        profile_photo
+        from users;"
+        
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,68 +19,34 @@
     <title>Document</title>
 </head>
 <body>
-    <table border ="1" align="center">
-        <tr>
-            <td>ID</td>
-            <td>Type</td>
-            <td>Value</td>
-        </tr>
 
-        <tr>
-            <td>1</td>
-            <td>Mazda</td>
-            <td>67M</td>
-        </tr>
-
-        <tr>
-            <td>2</td>
-            <td>Chevrolet</td>
-            <td>40M</td>
-        </tr>
-    </table>
 
     <table border="1" align="center">
         <tr>
-            <td>ID</td>
-            <td>Brand</td>
-            <td>Type</td>
-            <td>Value</td>
-        </tr>
-        
-        <tr>
-            <td>1</td>
-            <td>Mazda</td>
-            <td>
-                C3<br>
-                323<br>
-                CX90<br>
-                M2<br>
-            </td>
-            <td>
-                30M<br>
-                20M<br>
-                40M<br>
-                20M<br>
-            </td>
+            <th>Fullname</th>
+            <th>E-mail</th>
+            <th>mobile_phone</th>
+            <th>Status</th>
+            <th>photo</th>
+            <th>Options</th>
         </tr>
 
         <tr>
-            <td>2</td>
-            <td>Chevrolet</td>
+            <td>Peter Loza</td>
+            <td>peter@mail.com</td>
+            <td>300123</td>
+            <td>active</td>
+            <td><img src="profile_photos/default.png" width="50" alt="User photo"></td>
             <td>
-                SparkLife<br>
-                SparkGT <br>
-                ONIX <br>
-                Camaro <br>
-            </td>
-            <td>
-                15M <br>
-                20M <br>
-                30M <br>
-                40M <br>
+                <a href="#">
+                    <img src="icons/edit.png" width="20" alt="Edit User">
+                </a>
+                <a href="#">
+                    <img src="icons/delete.png" width="20" alt="Delete User">
+                </a>
             </td>
         </tr>
-        
+
     </table>
 
 </body>
