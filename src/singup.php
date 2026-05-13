@@ -35,7 +35,9 @@
     //local & supa
     if ($res_local) {
     $res_supa = pg_query($supa_conn, $sql);
-
+    echo "<script>alert('Listo. Usuario registrado')</script>";
+    header('refresh:0;url=singin.html');
+    
     if ($res_supa) {
         echo "Registro exitoso.";
     } else {
