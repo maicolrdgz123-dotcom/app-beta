@@ -35,6 +35,7 @@
     //local & supa
     if ($res_local) {
     $res_supa = pg_query($supa_conn, $sql);
+
     if ($res_supa) {
         echo "Registro exitoso.";
     } else {
