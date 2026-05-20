@@ -1,8 +1,7 @@
 <?php 
     require("../config/database.php");
-    $sql_users="
-        SELECT
-            select firstname||' '||lastname as fullname,
+    $sql_users="SELECT
+            firstname||' '||lastname as fullname,
 	        email,
 	        mobile_phone,
 	        case when status = true then 'active' else 'inactive' end as status,
